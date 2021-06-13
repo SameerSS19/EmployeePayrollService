@@ -1,5 +1,10 @@
 package com.employeepayroll;
 
+/*Libraries
+     *import ArrayList class
+     *Import List class
+     *Import the Scanner class
+ */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,6 +22,10 @@ public class EmployeePayrollService {
     public EmployeePayrollService(List<EmployeePayrollData> employeePayrollList) {
     }
 
+    /*Main method
+    * Print Welcome Message.
+    * Creating a Object of EmployeePayrollService.
+     */
     public static void main(String[] args) {
         System.out.println("Welcome to the Employee PayRoll Service Program");
         ArrayList<EmployeePayrollData> employeePayrollist = new ArrayList<>();
