@@ -1,10 +1,20 @@
 package com.employeepayroll;
 
 public class EmployeePayrollData {
+    /*Instance variable
+    *id;
+    * name
+    * salary
+     */
     private int id;
     private String name;
     private double salary;
-    /*Constructor*/
+
+    /*Constructor for EmployeePayrollData.
+    *@param id;
+    *@param name;
+    * @param salary
+     */
     public EmployeePayrollData(int id, String name, double salary) {
         this.id = id;
         this.name = name;
