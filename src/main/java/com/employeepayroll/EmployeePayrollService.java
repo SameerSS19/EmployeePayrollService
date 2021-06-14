@@ -1,5 +1,5 @@
 package com.employeepayroll;
-
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,14 +8,16 @@ public class EmployeePayrollService {
 
     public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
 
-    private List<EmployeePayrollData> employeePayrollList;
+    private static List<EmployeePayrollData> employeePayrollList;
 
-    public EmployeePayrollService() {
-        employeePayrollList =new ArrayList<>();
+    public EmployeePayrollService(List<EmployeePayrollData> employeePayrollList){
+        this.employeePayrollList = employeePayrollList;
     }
 
-    public EmployeePayrollService(List<EmployeePayrollData> employeePayrollList) {
+    public EmployeePayrollService(){
+
     }
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to the Employee PayRoll Service Program");
@@ -24,6 +26,7 @@ public class EmployeePayrollService {
         Scanner consoleInputReader = new Scanner(System.in);
         employeePayrollService.readEmployeePayrollData(consoleInputReader);
         employeePayrollService.writeEmployeePayrollData(IOService.CONSOLE_IO);
+
     }
     /* Read Employee Payroll data from console */
     private void readEmployeePayrollData(Scanner consoleInputReader) {
@@ -44,4 +47,12 @@ public class EmployeePayrollService {
             new EmployeePayrollFileIOService().writeData(employeePayrollList);
         }
     }
+    /* Print Employee Payroll */
+    public void printData(IOService fileIo) {
+        if(fileIo.equals(IOService.FILE_IO)) {
+            new EmployeePayrollFileIOService().printData();
+        }
+
+    }
+
 }
